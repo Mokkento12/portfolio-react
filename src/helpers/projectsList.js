@@ -50,14 +50,12 @@ const projects = [
     skills: "HTML, SCSS, JS",
     img: project05,
     imgBig: project05Big,
-    gitHubLink: "https://github.com/",
   },
   {
     title: "Gaming community",
     skills: "React, PHP, MySql",
     img: project06,
     imgBig: project06Big,
-    gitHubLink: "https://github.com/",
   },
 ];
 
