@@ -21,6 +21,23 @@ const BtnDarkMode = () => {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const handleChange = (event) => {
+      const newColorScheme = event.matches ? "dark" : "light";
+      setDarkMode(newColorScheme);
+    };
+
+    // Добавляем обработчик
+    mediaQuery.addEventListener("change", handleChange);
+
+    // Удаляем обработчик при размонтировании компонента
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, [setDarkMode]);
+
   const toggleDarkMode = () => {
     setDarkMode((currentValue) => {
       return currentValue === "light" ? "dark" : "light";
